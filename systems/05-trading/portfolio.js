@@ -1,0 +1,7 @@
+export function createAccount(initialCash=500){return{cash:initialCash,equity:initialCash,realizedPnl:0,unrealizedPnl:0,positions:{},trades:[]};}
+
+export function markToMarket(account,prices){let unrealized=0;for(const p of Object.values(account.positions)){const price=prices[p.symbol];if(price==null)continue;unrealized+=(price-p.entryPrice)*p.quantity*p.side;}account.unrealizedPnl=unrealized;account.equity=account.cash+unrealized;return account;}
+
+export function openPosition(account,{symbol,side,quantity,price,fee=0}){if(quantity<=0)throw new Error('Quantity must be positive');if(!['long','short'].includes(side))throw new Error('Invalid side');const existing=account.positions[symbol];if(existing)throw new Error('Position already open');const signed=side==='long'?1:-1;account.cash-=fee;account.positions[symbol]={symbol,side,quantity,entryPrice:price,signed,openedAt:Date.now()};account.trades.push({type:'open',symbol,side,quantity,price,fee});return account;}
+
+export function closePosition(account,{symbol,price,fee=0}){const p=account.positions[symbol];if(!p)throw new Error('No open position');const pnl=(price-p.entryPrice)*p.quantity*p.signed;account.realizedPnl+=pnl-fee;account.cash+=pnl-fee;delete account.positions[symbol];account.trades.push({type:'close',symbol,side:p.side,quantity:p.quantity,entryPrice:p.entryPrice,price,pnl,fee});account.equity=account.cash;return{account,pnl:pnl-fee};}
