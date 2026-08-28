@@ -11,7 +11,7 @@
   <main class="app">
     <header class="topbar">
       <div><span class="eyebrow">GENERATION 1</span><h1>Idle Trading Empire</h1></div>
-      <div class="clock"><span id="age">Age 0</span><span id="day">Day 1 / 365</span></div>
+      <div class="clock"><span id="age">Age 0</span><span id="day">Year 1</span></div>
     </header>
 
     <section id="setup" class="panel setup">
@@ -50,16 +50,14 @@
 
       <section id="life" class="tabpage active">
         <div class="grid two">
-          <div class="panel"><h2>Life</h2><p id="lifeText">You are a newborn in your chosen city.</p><div id="events"></div><button id="advance" class="primary">Advance 1 Day</button></div>
+          <div class="panel"><h2>Life</h2><p id="lifeText">You are a newborn in your chosen city.</p><div id="stage"></div><div id="events"></div><button id="advance" class="primary">Advance 1 Year</button></div>
           <div class="panel"><h2>Character</h2><div id="character"></div></div>
         </div>
       </section>
 
       <section id="markets" class="tabpage hidden">
         <div class="grid two">
-          <div class="panel"><h2>Markets</h2><p class="muted">Choose how deeply you want to trade. Advanced modes unlock as you grow.</p>
-            <div class="mode-list"><button data-mode="Casual / Auto">Casual / Auto</button><button data-mode="Strategy Trading">Strategy Trading</button><button data-mode="Assisted Trading">Assisted Trading</button><button data-mode="Full Trading Simulator">Full Trading Simulator</button></div>
-          </div>
+          <div class="panel"><h2>Markets</h2><p class="muted">Choose how deeply you want to trade. Advanced modes unlock as you grow.</p><div class="mode-list"><button data-mode="Casual / Auto">Casual / Auto</button><button data-mode="Strategy Trading">Strategy Trading</button><button data-mode="Assisted Trading">Assisted Trading</button><button data-mode="Full Trading Simulator">Full Trading Simulator</button></div></div>
           <div class="panel"><h2>Market Snapshot</h2><div id="marketsList"></div></div>
         </div>
       </section>
