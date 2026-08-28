@@ -1,74 +1,14 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b0f17" />
-  <title>Idle Trading Empire</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <main class="app">
-    <header class="topbar">
-      <div><span class="eyebrow">GENERATION 1</span><h1>Idle Trading Empire</h1></div>
-      <div class="clock"><span id="age">Age 0</span><span id="day">Year 1</span></div>
-    </header>
-
-    <section id="setup" class="panel setup">
-      <h2>Begin your dynasty</h2>
-      <p class="muted">You start at birth. Build wealth, reputation, businesses, influence and a legacy that can outlive you.</p>
-      <div class="grid two">
-        <label>Name<input id="name" value="Shark" maxlength="24" /></label>
-        <label>Starting location<select id="location"><option>Atlanta, Georgia</option><option>New York, New York</option><option>Miami, Florida</option><option>Los Angeles, California</option><option>London, United Kingdom</option><option>Dubai, UAE</option><option>Tokyo, Japan</option><option>Singapore</option></select></label>
-      </div>
-      <h3>Allocate 10 starting attribute points</h3>
-      <div class="grid four attrs">
-        <label>Charisma<input class="attr" data-key="charisma" type="number" min="0" max="10" value="3" /></label>
-        <label>Intelligence<input class="attr" data-key="intelligence" type="number" min="0" max="10" value="3" /></label>
-        <label>Discipline<input class="attr" data-key="discipline" type="number" min="0" max="10" value="3" /></label>
-        <label>Leadership<input class="attr" data-key="leadership" type="number" min="0" max="10" value="1" /></label>
-      </div>
-      <div class="allocation">Points used: <strong id="points">10 / 10</strong></div>
-      <button id="start" class="primary">Start Life</button>
-    </section>
-
-    <section id="game" class="hidden">
-      <div class="stats grid four">
-        <div class="stat"><span>Cash</span><strong id="cash">$500</strong></div>
-        <div class="stat"><span>Net Worth</span><strong id="networth">$500</strong></div>
-        <div class="stat"><span>Reputation</span><strong id="rep">0</strong></div>
-        <div class="stat"><span>Fame</span><strong id="fame">0</strong></div>
-      </div>
-
-      <nav class="tabs">
-        <button class="tab active" data-tab="life">Life</button>
-        <button class="tab" data-tab="markets">Markets</button>
-        <button class="tab" data-tab="social">Social</button>
-        <button class="tab" data-tab="empire">Empire</button>
-        <button class="tab" data-tab="news">News</button>
-      </nav>
-
-      <section id="life" class="tabpage active">
-        <div class="grid two">
-          <div class="panel"><h2>Life</h2><p id="lifeText">You are a newborn in your chosen city.</p><div id="stage"></div><div id="events"></div><button id="advance" class="primary">Advance 1 Year</button></div>
-          <div class="panel"><h2>Character</h2><div id="character"></div></div>
-        </div>
-      </section>
-
-      <section id="markets" class="tabpage hidden">
-        <div class="grid two">
-          <div class="panel"><h2>Markets</h2><p class="muted">Choose how deeply you want to trade. Advanced modes unlock as you grow.</p><div class="mode-list"><button data-mode="Casual / Auto">Casual / Auto</button><button data-mode="Strategy Trading">Strategy Trading</button><button data-mode="Assisted Trading">Assisted Trading</button><button data-mode="Full Trading Simulator">Full Trading Simulator</button></div></div>
-          <div class="panel"><h2>Market Snapshot</h2><div id="marketsList"></div></div>
-        </div>
-      </section>
-
-      <section id="social" class="tabpage hidden"><div class="grid two"><div class="panel"><h2>Social Platform</h2><p>Build fame through content, reputation and consistency.</p><button id="post" class="primary">Post Content</button></div><div class="panel"><h2>Trading Community</h2><p>Create your future trading network as your reputation grows.</p><div class="progress"><span id="communityBar"></span></div><p id="communityText">Reputation 0 / 100</p></div></div></section>
-
-      <section id="empire" class="tabpage hidden"><div class="grid two"><div class="panel"><h2>Assets</h2><div id="assets"></div></div><div class="panel"><h2>Businesses</h2><p>No businesses yet. Build capital and reputation to unlock entrepreneurship.</p></div></div></section>
-
-      <section id="news" class="tabpage hidden"><div class="panel"><h2>Global Financial News</h2><div id="newsFeed"></div></div></section>
-    </section>
-  </main>
-  <script src="app.js"></script>
-</body>
-</html>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#0b0f17" /><title>Idle Trading Empire</title><link rel="stylesheet" href="styles.css" /></head>
+<body><main class="app">
+<header class="topbar"><div><span class="eyebrow">GENERATION 1</span><h1>Idle Trading Empire</h1></div><div class="clock"><span id="age">Age 0</span><span id="day">Baby • Year 0</span></div></header>
+<section id="setup" class="panel setup"><h2>Begin your dynasty</h2><p class="muted">Start at birth and make choices that shape education, skills, relationships, income and your eventual trading empire.</p><div class="grid two"><label>Name<input id="name" value="Shark" maxlength="24" /></label><label>Starting location<select id="location"><option>Atlanta, Georgia</option><option>New York, New York</option><option>Miami, Florida</option><option>Los Angeles, California</option><option>London, United Kingdom</option><option>Dubai, UAE</option><option>Tokyo, Japan</option><option>Singapore</option></select></label></div><h3>Allocate 10 starting attribute points</h3><div class="grid four attrs"><label>Charisma<input class="attr" data-key="charisma" type="number" min="0" max="10" value="3" /></label><label>Intelligence<input class="attr" data-key="intelligence" type="number" min="0" max="10" value="3" /></label><label>Discipline<input class="attr" data-key="discipline" type="number" min="0" max="10" value="3" /></label><label>Leadership<input class="attr" data-key="leadership" type="number" min="0" max="10" value="1" /></label></div><div class="allocation">Points used: <strong id="points">10 / 10</strong></div><button id="start" class="primary">Start Life</button></section>
+<section id="game" class="hidden"><div class="stats grid four"><div class="stat"><span>Cash</span><strong id="cash">$500</strong></div><div class="stat"><span>Net Worth</span><strong id="networth">$500</strong></div><div class="stat"><span>Reputation</span><strong id="rep">0</strong></div><div class="stat"><span>Fame</span><strong id="fame">0</strong></div></div>
+<nav class="tabs"><button class="tab active" data-tab="life">Life</button><button class="tab" data-tab="markets">Markets</button><button class="tab" data-tab="social">Social</button><button class="tab" data-tab="empire">Empire</button><button class="tab" data-tab="news">News</button></nav>
+<section id="life" class="tabpage active"><div class="grid two"><div class="panel"><h2>Life</h2><p id="lifeText"></p><div id="stage"></div><div class="action-header"><strong>Life Choices</strong><span id="actionsLeft">Actions this year: 3</span></div><div id="actions" class="action-list"></div><div id="events"></div><button id="advance" class="primary">Advance 1 Year</button></div><div class="panel"><h2>Character</h2><div id="character"></div></div></div></section>
+<section id="markets" class="tabpage hidden"><div class="grid two"><div class="panel"><h2>Markets</h2><p class="muted">Choose how deeply you want to trade. Advanced modes unlock as you grow.</p><div class="mode-list"><button data-mode="Casual / Auto">Casual / Auto</button><button data-mode="Strategy Trading">Strategy Trading</button><button data-mode="Assisted Trading">Assisted Trading</button><button data-mode="Full Trading Simulator">Full Trading Simulator</button></div></div><div class="panel"><h2>Market Snapshot</h2><div id="marketsList"></div></div></div></section>
+<section id="social" class="tabpage hidden"><div class="grid two"><div class="panel"><h2>Social Platform</h2><p>Build fame through content, reputation and consistency.</p><button id="post" class="primary">Post Content</button></div><div class="panel"><h2>Relationships</h2><p class="muted">Relationships become persistent contacts with levels that can create future opportunities.</p><div id="relationships"></div></div></div></section>
+<section id="empire" class="tabpage hidden"><div class="grid two"><div class="panel"><h2>Education</h2><div id="schoolStatus"></div><h3>College</h3><div id="collegeStatus"></div></div><div class="panel"><h2>Career</h2><div id="careerStatus"></div><h3>Assets</h3><div id="assets"></div></div></div></section>
+<section id="news" class="tabpage hidden"><div class="panel"><h2>Global Financial News</h2><div id="newsFeed"></div></div></section></section>
+</main><script src="app.js"></script></body></html>
