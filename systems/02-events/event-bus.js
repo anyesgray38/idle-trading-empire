@@ -1,0 +1,2 @@
+export function createEventBus(){const subscribers=new Map();return{subscribe(type,handler){if(!subscribers.has(type))subscribers.set(type,new Set());subscribers.get(type).add(handler);return()=>subscribers.get(type)?.delete(handler);},publish(event){for(const handler of subscribers.get(event.type)??[])handler(event);}};}
+export function createEvent(type,timestamp,source,payload={}){return{id:`${type}:${timestamp}:${source}`,type,timestamp,source,payload};}

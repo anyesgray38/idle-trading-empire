@@ -1,0 +1,2 @@
+import { createEvent } from '../02-events/event-bus.js';
+export function createTickEngine({intervalMs=1000,processTick}){return{intervalMs,step(state,timestamp){const result=processTick(structuredClone(state),timestamp);return{state:{...result.state,meta:{...result.state.meta,simulationTime:timestamp,lastSimulatedAt:timestamp}},events:[createEvent('simulation.tick',timestamp,'tick-engine'),...(result.events??[])]};}};}
